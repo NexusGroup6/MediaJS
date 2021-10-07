@@ -41,3 +41,33 @@ function limpar() {
 
     document.getElementById('resultado').innerHTML = "";//limpar resultado
 }
+
+function exibirArray() {
+    const nomes = [];
+    const notas = [];
+  
+    //leitura dos elementos do array
+    for (let x = 0; x < 2; x++) {
+        nomes[x] = prompt("Digite o nome do " + (x+1) + "º aluno.");
+        console.log('Nomes ' + nomes);
+            for (let y = 0; y < 4; y++) {
+                notas[y] = prompt("Digite a " + (y+1) + "º nota.");
+                console.log('Notas' + notas);
+            }
+
+            var total = 0;
+            for(var i = 0; i < notas.length; i++) {
+            total += notas[i];
+            console.log('Media ' + total);
+            }
+            var avg = total / notas.length;
+    }
+
+    document.getElementById('resultado').innerHTML = 'Nomes ' + nomes + '<br>' + 
+    'Notas ' + notas + '<br>' +
+    'Media final ' + avg;
+
+  }
+
+  //nome = vetor |||| notas = matriz;
+  //getElementById entre aspas o Id; + indice: y+1;

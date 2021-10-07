@@ -63,9 +63,12 @@ function exibirArray() {
             var avg = total / notas.length;
     }
 
-    document.getElementById('resultado').innerHTML = 'Nomes ' + nomes + '<br>' + 
-    'Notas ' + notas + '<br>' +
-    'Media final ' + avg;
+    document.getElementById('nome1').innerHTML = 'Nome ' + nomes[0,0];
+    document.getElementById('nome2').innerHTML = 'Nome ' + nomes[0,1];
+    document.getElementById('nota1').innerHTML = 'Notas ' + notas;
+    document.getElementById('nota2').innerHTML = 'Notas ' + notas;
+    document.getElementById('media1').innerHTML = 'Media ' + avg;
+    document.getElementById('media2').innerHTML = 'Media ' + avg;
 
   }
 

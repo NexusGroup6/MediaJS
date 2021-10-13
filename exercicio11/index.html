@@ -2,97 +2,105 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="boot-removebg-preview.png" type="image/icon type">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-    <title>Exercicio 11</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="boot-removebg-preview.png" type="image/icon type">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <title>Exercicio 11</title>
 </head>
 
 <body>
-    <div class="container">
-        <br><br>
-        <!--Header Row -->
-        <div class="row">
-            <div class="col-md-12 ">
-                <div class="d-flex justify-content-around">
-                    <div class="card">
-                        <div class="card-body ">
-                            <h2 class="card-title text-center">Conselho Final</h2>
-                            <br>
-                            <input id="nomeAluno" type="text" placeholder="Nome aluno" class="form-control">
-                            <br>
-                            <input id="nota1" type="number" placeholder="Nota 1" min="0" max="100" class="form-control">
-                            <br>
-                            <input id="nota2" type="number" placeholder="Nota 2" min="0" max="100" class="form-control">
-                            <br>
-                            <input id="nota3" type="number" placeholder="Nota 3"  min="0" max="100" class="form-control">
-                            <br>
-                            <input id="nota4" type="number" placeholder="Nota 4" min="0" max="100" class="form-control">
-                            <br>
-                            <div class="col-md-12 text-center">
-                                <button id="botao1" onclick="exibirArray()"
-                                    class="btn btn-primary col-md-4 text-center">Enviar!</button>
-                                <button id="botao2" onclick="limpar()"
-                                    class="btn btn-primary col-md-4 text-center">Limpar!</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+  <div class="aluno1">
+    <h2>Aluno 1</h2>
+    <br>
+    <input id="nomeAluno1" type="text" placeholder="Aluno 1">
     <br><br>
+    <input id="nota1aluno1" type="number" placeholder="Nota 1" min="0" max="100">
+    <input id="nota2aluno1" type="number" placeholder="Nota 2" min="0" max="100">
+    <input id="nota3aluno1" type="number" placeholder="Nota 3" min="0" max="100">
+    <input id="nota4aluno1" type="number" placeholder="Nota 4" min="0" max="100">
+    <br><br>
+      <button id="botao1" onclick="aluno1()">Enviar!</button>
+      <button id="botaoLimpar1" onclick="limpar1()">Limpar!</button>
+    </div>
+    <br><br><!--FIM aluno 1-->
+
+    <div class="aluno2">
+      <h2>Aluno 2</h2>
+      <br>
+      <input id="nomeAluno2" type="text" placeholder="Aluno 2">
+      <br><br>
+      <input id="nota1aluno2" type="number" placeholder="Nota 1" min="0" max="100">
+      <input id="nota2aluno2" type="number" placeholder="Nota 2" min="0" max="100">
+      <input id="nota3aluno2" type="number" placeholder="Nota 3" min="0" max="100">
+      <input id="nota4aluno2" type="number" placeholder="Nota 4" min="0" max="100">
+      <br><br>
+        <button id="botao1" onclick="aluno2()">Enviar!</button>
+        <button id="botaoLimpar2" onclick="limpar2()">Limpar!</button>
+      </div>
+      <br><br><!--FIM aluno 2-->
+
+    <!--Parte 2 do HTML (resultados)-->
     <div class="table-responsive-sm">
       <table class="table caption-top">
         <caption></caption>
         <thead>
           <tr>
             <th scope="col"></th>
-            <th scope="col">Nome</th><!--Titulo nome-->
-            <th scope="col">Nota</th><!--Titulo nota-->
-            <th scope="col">Média Final</th><!--Titulo media final-->
+            <th scope="col">Nome</th>
+            <!--Titulo nome-->
+            <th scope="col">Notas</th>
+            <!--Titulo nota-->
+            <th scope="col">Média Final</th>
+            <!--Titulo media final-->
+            <th scope="col">Situação Aluno</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <th scope="row">1</th><!--Linha 1 info.-->
-            <td id="nome1"></td><!--Nome do aluno 1-->
-            <td id="nota1"></td><!--Nota do aluno 1-->
-            <td id="media1"></td><!--Media do aluno 1-->
+            <th scope="row">1</th>
+            <!--Linha 1 info.-->
+            <td id="nome1"></td>
+            <!--Nome do aluno 1-->
+            <td id="nota1"></td>
+            <!--Nota do aluno 1-->
+            <td id="media1"></td>
+            <!--Media do aluno 1-->
+            <td id="situacao1"></td>
           </tr>
           <tr>
-            <th scope="row">2</th><!--Linha 2 info.-->
-            <td id="nome2"></td><!--Nome do aluno 2-->
-            <td id="nota2"></td><!--Nota do aluno 2-->
-            <td id="media2"></td><!--Media do aluno 2-->
-          </tr>
-          <tr>
-            <th scope="row">3</th><!--Linha 3 info.-->
-            <td id="nome3"></td><!--Nome do aluno 3-->
-            <td id="nota3"></td><!--Nota do aluno 3-->
-            <td id="media3"></td><!--Media do aluno 3-->
-          </tr>
-          <tr>
-            <th scope="row">4</th><!--Linha 4 info.-->
-            <td id="nome4"></td><!--Nome do aluno 4-->
-            <td id="nota4"></td><!--Nota do aluno 4-->
-            <td id="media4"></td><!--Media do aluno 4-->
-          </tr>
-          <tr>
-            <th scope="row">5</th><!--Linha 5 info.-->
-            <td id="nome5"></td><!--Nome do aluno 5-->
-            <td id="nota5"></td><!--Nota do aluno 5-->
-            <td id="media5"></td><!--Media do aluno 5-->
+            <th scope="row">2</th>
+            <!--Linha 2 info.-->
+            <td id="nome2"></td>
+            <!--Nome do aluno 2-->
+            <td id="nota2"></td>
+            <!--Nota do aluno 2-->
+            <td id="media2"></td>
+            <!--Media do aluno 2-->
+            <td id="situacao2"></td>
           </tr>
         </tbody>
       </table>
     </div>
+    <br><br>
+    <button onclick="media()">Media Geral</button>
+    <button id="botaoLimpar3" onclick="limpar3()">Limpar!</button>
+    <h3 id="media"></h3><!--FIM Media Geral-->
+
+    <button onclick="mediaInferior()">Media Inferior</button>
+    <button id="botaoLimpar4" onclick="limpar4()">Limpar!</button>
+    <h3 id="mediaInferior1"></h3>
+    <h3 id="mediaInferior2"></h3><!--FIM Media Inferior-->
 
     <script src="script.js"></script>
 </body>
 
 </html>
+
+<!--Deverá exibir:
+  _todos os dados para cada um dos 5 alunos (nome, notas bimestrais,média final e situação do aluno);
+  _a média geral da turma;
+  _nome dos alunos que obtiveram a média final abaixo da média geral da turma.-->

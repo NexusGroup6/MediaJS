@@ -1,76 +1,84 @@
-function aprovado() {
-var nomeAluno = document.getElementById('nomeAluno').value;
-var nota1 = parseFloat(document.getElementById('nota1').value);
-var nota2 = parseFloat(document.getElementById('nota2').value);
-var nota3 = parseFloat(document.getElementById('nota3').value);
-var nota4 = parseFloat(document.getElementById('nota4').value);/**armazenamento de id's do HTML*/
-//
-if (nomeAluno && nota1 && nota2 && nota3 && nota4 || "") {//validação dos campos
-    console.log('funcionando');
-} else {
-    alert('Valores não inseridos!');
-    document.location.reload(true);
-}
-//
-var media = (nota1 + nota2 + nota3 + nota4) / 4;//calc media
-//
-if (media >= 70) {
-    document.getElementById('resultado').innerHTML = 'Nome do Aluno ' + nomeAluno + '<br>' +
-    'Notas ' + nota1 + ', ' + nota2 + ', ' + nota3 + ', ' + nota4 + '<br>' +
-    'Média final ' + media + '<br>' +
-    'Aprovado';
-} else if (media >= 50 && media < 70) {
-    document.getElementById('resultado').innerHTML = 'Nome do Aluno ' + nomeAluno + '<br>' +
-    'Notas ' + nota1 + ', ' + nota2 + ', ' + nota3 + ', ' + nota4 + '<br>' +
-    'Média final ' + media + '<br>' +
-    'Recuperação';
-} else if (media < 50) {
-    document.getElementById('resultado').innerHTML = 'Nome do Aluno ' + nomeAluno + '<br>' +
-    'Notas ' + nota1 + ', ' + nota2 + ', ' + nota3 + ', ' + nota4 + '<br>' +
-    'Média final ' + media + '<br>' +
-    'Reprovado';
-}
-}
+var mediaAluno1 = 0;
+var mediaAluno2 = 0;
+var mediaGeral = 0;
+var nomeAluno1 = 0;
+var nomeAluno2 = 0;
 
-function limpar() {
-    document.getElementById('nomeAluno').value = "";
-    document.getElementById('nota1').value = "";
-    document.getElementById('nota2').value = "";
-    document.getElementById('nota3').value = "";
-    document.getElementById('nota4').value = "";//limpar valores do usuário
+function aluno1() {
+  nomeAluno1 = document.getElementById("nomeAluno1").value;
+  var nota1aluno1 = parseFloat(document.getElementById("nota1aluno1").value);
+  var nota2aluno1 = parseFloat(document.getElementById("nota2aluno1").value);
+  var nota3aluno1 = parseFloat(document.getElementById("nota3aluno1").value);
+  var nota4aluno1 = parseFloat(document.getElementById("nota4aluno1").value);
 
-    document.getElementById('resultado').innerHTML = "";//limpar resultado
-}
+  mediaAluno1 = (nota1aluno1 + nota2aluno1 + nota3aluno1 + nota4aluno1) / 4;
 
-function exibirArray() {
-    const nomes = [];
-    const notas = [];
-  
-    //leitura dos elementos do array
-    for (let x = 0; x < 2; x++) {
-        nomes[x] = prompt("Digite o nome do " + (x+1) + "º aluno.");
-        console.log('Nomes ' + nomes);
-            for (let y = 0; y < 4; y++) {
-                notas[y] = prompt("Digite a " + (y+1) + "º nota.");
-                console.log('Notas' + notas);
-            }
+  document.getElementById("nome1").innerHTML = nomeAluno1;
+  document.getElementById("nota1").innerHTML =
+    nota1aluno1 + ", " + nota2aluno1 + ", " + nota3aluno1 + ", " + nota4aluno1;
+  document.getElementById("media1").innerHTML = mediaAluno1;
 
-            var total = 0;
-            for(var i = 0; i < notas.length; i++) {
-            total += notas[i];
-            console.log('Media ' + total);
-            }
-            var avg = total / notas.length;
-    }
-
-    document.getElementById('nome1').innerHTML = 'Nome ' + nomes[0,0];
-    document.getElementById('nome2').innerHTML = 'Nome ' + nomes[0,1];
-    document.getElementById('nota1').innerHTML = 'Notas ' + notas;
-    document.getElementById('nota2').innerHTML = 'Notas ' + notas;
-    document.getElementById('media1').innerHTML = 'Media ' + avg;
-    document.getElementById('media2').innerHTML = 'Media ' + avg;
-
+  if (mediaAluno1 >= 70) {
+    situacao1.innerHTML = '<h6 style="color:#008800">' + "Aprovado!" + "</h6>";
+  } else if (mediaAluno1 >= 50 && mediaAluno1 < 70) {
+    situacao1.innerHTML = '<h6 style="color:#ffd500">' + "Recuperação!" + "</h6>";
+  } else if (mediaAluno1 < 50) {
+    situacao1.innerHTML = '<h6 style="color:#c22303">' + "Reprovado!" + "</h6>";
   }
+}
+function aluno2() {
+  nomeAluno2 = document.getElementById("nomeAluno2").value;
+  var nota1aluno2 = parseFloat(document.getElementById("nota1aluno2").value);
+  var nota2aluno2 = parseFloat(document.getElementById("nota2aluno2").value);
+  var nota3aluno2 = parseFloat(document.getElementById("nota3aluno2").value);
+  var nota4aluno2 = parseFloat(document.getElementById("nota4aluno2").value);
 
-  //nome = vetor |||| notas = matriz;
-  //getElementById entre aspas o Id; + indice: y+1;
+  mediaAluno2 = (nota1aluno2 + nota2aluno2 + nota3aluno2 + nota4aluno2) / 4;
+
+  document.getElementById("nome2").innerHTML = nomeAluno2;
+  document.getElementById("nota2").innerHTML =
+    nota1aluno2 + ", " + nota2aluno2 + ", " + nota3aluno2 + ", " + nota4aluno2;
+  document.getElementById("media2").innerHTML = mediaAluno2;
+
+  if (mediaAluno2 >= 70) {
+    situacao2.innerHTML = '<h6 style="color:#008800">' + "Aprovado!" + "</h6>";
+  } else if (mediaAluno2 >= 50 && mediaAluno2 < 70) {
+    situacao2.innerHTML = '<h6 style="color:#ffd500">' + "Recuperação!" + "</h6>";
+  } else if (mediaAluno2 < 50) {
+    situacao2.innerHTML = '<h6 style="color:#c22303">' + "Reprovado!" + "</h6>";
+  }
+}
+
+function media() {
+mediaGeral = (mediaAluno1 + mediaAluno2) / 2;
+document.getElementById('media').innerHTML = 'Média geral da turma ' + mediaGeral;
+}
+function mediaInferior() {
+    if (mediaAluno1 < mediaGeral) {
+        document.getElementById('mediaInferior1').innerHTML = nomeAluno1 + ' teve desempenho inferior ao da turma.';
+    } if (mediaAluno2 < mediaGeral) {
+        document.getElementById('mediaInferior2').innerHTML = nomeAluno2 + ' teve desempenho inferior ao da turma.';
+    }
+}
+
+function limpar1() {
+    document.getElementById('nomeAluno1').value = "";
+    document.getElementById('nota1aluno1').value = "";
+    document.getElementById('nota2aluno1').value = "";
+    document.getElementById('nota3aluno1').value = "";
+    document.getElementById('nota4aluno1').value = ""; 
+}
+function limpar2() {
+    document.getElementById('nomeAluno2').value = "";
+    document.getElementById('nota1aluno2').value = "";
+    document.getElementById('nota2aluno2').value = "";
+    document.getElementById('nota3aluno2').value = "";
+    document.getElementById('nota4aluno2').value = ""; 
+}
+function limpar3() {
+    document.getElementById('media').innerHTML = "";
+}
+function limpar4() {
+    document.getElementById('mediaInferior1').innerHTML = "";
+    document.getElementById('mediaInferior2').innerHTML = "";
+}

@@ -1,4 +1,11 @@
-
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+body{
+    background-image: linear-gradient(90deg, #8e9eab, #eef2f3);
+}
 .custom-centered{
     margin:0 auto;
     width:300px;
@@ -19,7 +26,7 @@ h3{
 
 
 .card{
-    width: 34rem;
+    width: 45rem;
 }
 
 button{
@@ -33,7 +40,7 @@ button{
     }
 
     .card-body{
-        height: 24rem;
+        height: 66rem;
     }
     
 }

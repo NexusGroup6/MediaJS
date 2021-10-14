@@ -51,11 +51,6 @@
                 </div>
               </div>
               <br>
-              <div class="col-md-12 text-center">
-                <button id="botao1" onclick="aluno1()" class="btn btn-primary col-md-3 text-center">Enviar!</button>
-                <button id="botao2" onclick="limpar1()" class="btn btn-primary col-md-3 text-center">Limpar!</button>
-              </div>
-              <br><br>
               <div class="aluno2">
                 <h2>Aluno 2</h2>
                 <br>
@@ -79,10 +74,79 @@
                   </div>
                 </div>
                 <br>
+                <div class="aluno3">
+                  <h2>Aluno 3</h2>
+                  <br>
+                  <div class="row g-3">
+                    <input id="nomeAluno3" type="text" class="form-control" placeholder="Aluno 3" aria-label="Aluno 3">
+                    <div class="col-sm-3">
+                      <input id="nota1aluno3" type="number" class="form-control" placeholder="Nota 1" aria-label="Nota 1"
+                        min="0" max="100">
+                    </div>
+                    <div class="col-sm-3">
+                      <input id="nota2aluno3" type="number" class="form-control" placeholder="Nota 2" min="0" max="100"
+                        aria-label="Nota 2">
+                    </div>
+                    <div class="col-sm-3">
+                      <input id="nota3aluno3" type="number" class="form-control" placeholder="Nota 3" min="0" max="100"
+                        aria-label="Nota 3">
+                    </div>
+                    <div class="col-sm-3">
+                      <input id="nota4aluno3" type="number" class="form-control" placeholder="Nota 4" min="0" max="100"
+                        aria-label="Nota 4">
+                    </div>
+                  </div>
+                  <br>
+                  <div class="aluno4">
+                    <h2>Aluno 4</h2>
+                    <br>
+                    <div class="row g-3">
+                      <input id="nomeAluno4" type="text" class="form-control" placeholder="Aluno 4" aria-label="Aluno 4">
+                      <div class="col-sm-3">
+                        <input id="nota1aluno4" type="number" class="form-control" placeholder="Nota 1" aria-label="Nota 1"
+                          min="0" max="100">
+                      </div>
+                      <div class="col-sm-3">
+                        <input id="nota2aluno4" type="number" class="form-control" placeholder="Nota 2" min="0" max="100"
+                          aria-label="Nota 2">
+                      </div>
+                      <div class="col-sm-3">
+                        <input id="nota3aluno4" type="number" class="form-control" placeholder="Nota 3" min="0" max="100"
+                          aria-label="Nota 3">
+                      </div>
+                      <div class="col-sm-3">
+                        <input id="nota4aluno4" type="number" class="form-control" placeholder="Nota 4" min="0" max="100"
+                          aria-label="Nota 4">
+                      </div>
+                    </div>
+                    <br>
+                    <div class="aluno5">
+                      <h2>Aluno 5</h2>
+                      <br>
+                      <div class="row g-3">
+                        <input id="nomeAluno5" type="text" class="form-control" placeholder="Aluno 5" aria-label="Aluno 5">
+                        <div class="col-sm-3">
+                          <input id="nota1aluno5" type="number" class="form-control" placeholder="Nota 1" aria-label="Nota 1"
+                            min="0" max="100">
+                        </div>
+                        <div class="col-sm-3">
+                          <input id="nota2aluno5" type="number" class="form-control" placeholder="Nota 2" min="0" max="100"
+                            aria-label="Nota 2">
+                        </div>
+                        <div class="col-sm-3">
+                          <input id="nota3aluno5" type="number" class="form-control" placeholder="Nota 3" min="0" max="100"
+                            aria-label="Nota 3">
+                        </div>
+                        <div class="col-sm-3">
+                          <input id="nota4aluno5" type="number" class="form-control" placeholder="Nota 4" min="0" max="100"
+                            aria-label="Nota 4">
+                        </div>
+                      </div>
+                      <br>
 
                 <div class="col-md-12 text-center">
-                  <button id="botao1" onclick="aluno2()" class="btn btn-primary col-md-3 text-center">Enviar!</button>
-                  <button id="botao2" onclick="limpar2()" class="btn btn-primary col-md-3 text-center">Limpar!</button>
+                  <button id="botao1" onclick="aluno2(), aluno1(), aluno3(), aluno4(), aluno5()" class="btn btn-primary col-md-3 text-center">Enviar!</button>
+                  <button id="botao2" onclick="limpar2(), limpar1()" class="btn btn-primary col-md-3 text-center">Limpar!</button>
                 </div>
                 <br><br>
                 <!--Parte 2 do HTML (resultados)-->
@@ -124,6 +188,39 @@
                         <!--Media do aluno 2-->
                         <td id="situacao2"></td>
                       </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <!--Linha 3 info.-->
+                        <td id="nome3"></td>
+                        <!--Nome do aluno 3-->
+                        <td id="nota3"></td>
+                        <!--Nota do aluno 3-->
+                        <td id="media3"></td>
+                        <!--Media do aluno 3-->
+                        <td id="situacao3"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">4</th>
+                        <!--Linha 4 info.-->
+                        <td id="nome4"></td>
+                        <!--Nome do aluno 4-->
+                        <td id="nota4"></td>
+                        <!--Nota do aluno 4-->
+                        <td id="media4"></td>
+                        <!--Media do aluno 4-->
+                        <td id="situacao4"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">5</th>
+                        <!--Linha 5 info.-->
+                        <td id="nome5"></td>
+                        <!--Nome do aluno 5-->
+                        <td id="nota5"></td>
+                        <!--Nota do aluno 5-->
+                        <td id="media5"></td>
+                        <!--Media do aluno 5-->
+                        <td id="situacao5"></td>
+                      </tr>
                     </tbody>
                   </table>
                 </div>
@@ -143,6 +240,9 @@
                     class="btn btn-primary col-md-3 text-center">Limpar!</button>
                   <h3 id="mediaInferior1"></h3>
                   <h3 id="mediaInferior2"></h3>
+                  <h3 id="mediaInferior3"></h3>
+                  <h3 id="mediaInferior4"></h3>
+                  <h3 id="mediaInferior5"></h3>
                   <!--FIM Media Inferior-->
                 </div>
               </div>
